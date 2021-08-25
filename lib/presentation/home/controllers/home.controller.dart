@@ -1,23 +1,25 @@
-import '/domain/auth/auth.repository.dart';
-import '/domain/auth/models/user.model.dart';
+import 'package:kreditplus_challenge/domain/product/product.model.dart';
+import 'package:kreditplus_challenge/domain/product/product.repository.dart';
 import '/domain/core/utils/snackbar.util.dart';
 import '/presentation/shared/loading/loading.controller.dart';
 
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
-  final AuthRepository _authRepository;
+  final ProductRepository _productRepository;
   final _loadingController = Get.find<LoadingController>();
 
-  HomeController({required AuthRepository authRepository})
-      : _authRepository = authRepository;
+  HomeController({required ProductRepository productRepository})
+      : _productRepository = productRepository;
+
+  final products = RxList<Product>();
 
   @override
-  Future<void> onReady() async {
-    super.onReady();
+  Future<void> onInit() async {
+    super.onInit();
     try {
       _loadingController.isLoading = true;
-      user.value = await _authRepository.getUser();
+      products.value = await _productRepository.getProducts();
     } catch (err) {
       SnackbarUtil.showError(message: err.toString());
     } finally {
@@ -25,5 +27,5 @@ class HomeController extends GetxController {
     }
   }
 
-  final user = Rxn<UserModel>();
+
 }

@@ -1,14 +1,14 @@
-import '/infrastructure/navigation/bindings/domains/auth.repository.binding.dart';
+import 'package:kreditplus_challenge/infrastructure/navigation/bindings/domains/home.repository.binding.dart';
+
 import '/presentation/home/controllers/home.controller.dart';
 import 'package:get/get.dart';
 
 class HomeControllerBinding extends Bindings {
   @override
   void dependencies() {
-    final authRepositoryBinding = AuthRepositoryBinding();
-
+    final homeRepositoryBinding = HomeRepositoryBinding();
     Get.lazyPut<HomeController>(
-      () => HomeController(authRepository: authRepositoryBinding.repository),
+      () => HomeController(productRepository: homeRepositoryBinding.repository),
     );
   }
 }

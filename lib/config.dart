@@ -6,7 +6,7 @@ class Environments {
 }
 
 class ConfigEnvironments {
-  static final String _currentEnvironments = Environments.LOCAL;
+  static final String _currentEnvironments = Environments.DEV;
   static final List<Map<String, String>> _availableEnvironments = [
     {
       'env': Environments.LOCAL,
@@ -14,7 +14,7 @@ class ConfigEnvironments {
     },
     {
       'env': Environments.DEV,
-      'url': '',
+      'url': 'https://fakestoreapi.com/',
     },
     {
       'env': Environments.QAS,

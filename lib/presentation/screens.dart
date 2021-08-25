@@ -1,3 +1,2 @@
 export './home/home.screen.dart';
-export './login/login.screen.dart';
-export 'login/login.screen.dart';
+export 'product/product_detail.screen.dart';

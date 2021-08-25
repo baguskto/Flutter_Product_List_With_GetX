@@ -1,7 +1,9 @@
+import 'package:kreditplus_challenge/presentation/home/widgets/item_product.widget.dart';
+import 'package:kreditplus_challenge/presentation/home/widgets/item_product_grid.widget.dart';
+
 import '/presentation/shared/loading/base.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import './controllers/home.controller.dart';
 
 class HomeScreen extends GetView<HomeController> {
@@ -9,19 +11,22 @@ class HomeScreen extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return BaseWidget(
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text('HomeScreen'),
-          centerTitle: true,
-        ),
-        body: Center(
-          child: Obx(
-            () => Text(
-              'logged in with: ${controller.user.value?.name ?? 'Oops'}',
-              style: const TextStyle(fontSize: 20),
-            ),
+          appBar: AppBar(
+            title: const Text('HomeScreen'),
+            centerTitle: true,
           ),
-        ),
-      ),
+          body: SingleChildScrollView(child: Obx(() {
+            return Column(
+              children: [
+                ItemProductListWidget(
+                  listData: controller.products.value,
+                ),
+                ItemProductGridWidget(
+                  listData: controller.products.value,
+                )
+              ],
+            );
+          }))),
     );
   }
 }

@@ -1,4 +1,4 @@
-package com.baguskto.boilerplate.getx_clean_boilerplate
+package com.baguskto.boilerplate.kreditplus_challenge
 
 import io.flutter.embedding.android.FlutterActivity
 

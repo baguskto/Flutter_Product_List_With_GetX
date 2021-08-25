@@ -22,6 +22,7 @@ class SnackbarUtil {
 
   static void showError({required String message}) {
     Get.rawSnackbar(
+      duration: Duration(milliseconds: 10000),
       title: 'Error',
       icon: const Icon(Icons.error, color: Colors.white),
       message: message,

@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.baguskto.boilerplate.getx_clean_boilerplate">
+    package="com.baguskto.boilerplate.kreditplus_challenge">
    <application
-        android:label="getx_clean_boilerplate"
+        android:label="kreditplus_challenge"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
